@@ -1,0 +1,15 @@
+uint32  timestamp
+uint32  index
+uint32  garbage_data
+float64  recent_ts_1
+float64  recent_ts_2
+float64  recent_ts_3
+float64  recent_ts_4
+float64  recent_ts_5
+float64  recent_ts_6
+float64  angular_velocity_1
+float64  angular_velocity_2
+float64  angular_velocity_3
+float64  angular_velocity_4
+float64  angular_velocity_5
+float64  angular_velocity_6
