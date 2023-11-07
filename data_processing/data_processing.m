@@ -347,3 +347,5 @@ FC_Mean = mean(FC)
 
 %test
 sum (FC_Mean.* [300 300 300 300 300 300])
+
+%
