@@ -19,16 +19,23 @@ In this folder you will find 4 csv files that were used to calculate the fc and 
 **ros2**  
 
 *Setup*
+
 The custom_msgs and py_pubsub folder can be downloaded and added inside of your source folder. Ex. /ros2_ws/src/(folders). This code is designed to run on ros2 Foxy. Before you can build and run, you must run the following commands
 
 source /opt/ros/foxy/setup.bash
+
 source install/setup.bash
+
 source install/setup.sh *(needed for reading the custom_msg)*
 
 *To Run*
+
 cd ros2_ws
+
 colcon build
+
 ros2 run py_pubsub talker (Start Publisher)
+
 ros2 topic echo Angular_Velocity (Echo the topic Angular Velocity)
 
 **test_data**
