@@ -10,7 +10,7 @@ To program the ESP32 with the provided main.c you will need to have the VScode e
 
 *A brief explanation of the main.c*
 
-I begin by creating 4  arrays for storing the number of pulses triggered, the converted data in radians, the time data, and the velocity data. I then create a packed struct for storing the data that I want to transmit over UDP. I then configure my IP adddress and the password of the desired router. **Make sure the port number is the same in this code and in the ros2 publisher** I then create a function for convertiong the gathered values into a velocity in radians per second. After this, I create 6 interrupt service routines that handle the data collection. **Make sure to add IRAM_ATTR to designate a memory location for storing the data**. In the setup I attact all of the interrupt routines to the rising edge of each pin. I initiate a wifi connection. In my main loop I print the data for debugging purposes and write the data over UDP using the Arduino UDP library. 
+I begin by creating 4  arrays for storing the number of pulses triggered, the converted data in radians, the time data, and the velocity data. I then create a packed struct for storing the data that I want to transmit over UDP. I configure the IP adddress and password of the desired router. **Make sure the port number is the same in this code and in the ros2 publisher**. I create a function for convertiong the gathered values into a velocity in radians per second. After this, I create 6 interrupt service routines that handle the data collection. **Make sure to add IRAM_ATTR to designate a memory location for storing the data**. In the setup I attach all of the interrupt routines to the rising edge of each pin. I initiate a wifi connection. In my main loop I print some of the gathered the data for debugging purpose, and write the struct data over UDP. 
 
 **data_processing**  
 
@@ -19,7 +19,7 @@ In this folder you will find 4 csv files that were used to calculate the fc and 
 **ros2**  
 
 *Setup*  
-The custom_msgs and py_pubsub folder can be downloaded and added inside of your source folder. Ex. /ros2_ws/src/(folders). This code is designed to run on ros2 Foxy. Before you can build and run, you must run the following commands
+The custom_msgs and py_pubsub folder can be downloaded and added inside of your source folder. Ex. /ros2_ws/src/(folders). This code is designed to run on ros2 Foxy. Before you can build and run, you must run the following commands:
 
 source /opt/ros/foxy/setup.bash
 source install/setup.bash
@@ -32,7 +32,7 @@ ros2 run py_pubsub talker (Start Publisher)
 ros2 topic echo Angular_Velocity (Echo the topic Angular Velocity)
 
 *explanation*  
-custom_msgs is a package that creates a custom message that allows the struct to be published with basic ros2 functions. py_pubsub contains the python function that listtens to UDP traffic on a desired router and port and publishes the recieved data to a topic called Angular_Velocity.
+custom_msgs is a package that creates a custom message that allows the struct to be published with basic ros2 functions. py_pubsub contains the python function that listtens to UDP traffic on a desired router and port, and publishes the recieved data to a topic called Angular_Velocity.
 
 **test_data**
 This folder contains all of the raw rosbag data from the perfomded tests. 
