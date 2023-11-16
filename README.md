@@ -25,12 +25,14 @@ source /opt/ros/foxy/setup.bash
 source install/setup.bash
 source install/setup.sh *(needed for reading the custom_msg)*
 
-*To Run*
-
+*To Run*    
 cd ros2_ws
 colcon build
 ros2 run py_pubsub talker (Start Publisher)
 ros2 topic echo Angular_Velocity (Echo the topic Angular Velocity)
 
-**test_data**
+*explanation*  
+custom_msgs is a package that creates a custom message that allows the struct to be published with basic ros2 functions. py_pubsub contains the python function that listtens to UDP traffic on a desired router and port and publishes the recieved data to a topic called Angular_Velocity.
 
+**test_data**
+This folder contains all of the raw rosbag data from the perfomded tests. 
