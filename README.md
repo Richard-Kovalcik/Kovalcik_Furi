@@ -26,6 +26,7 @@ source install/setup.bash
 source install/setup.sh *(needed for reading the custom_msg)*
 
 *To Run*
+
 cd ros2_ws
 colcon build
 ros2 run py_pubsub talker (Start Publisher)
